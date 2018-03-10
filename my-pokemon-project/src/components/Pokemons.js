@@ -10,6 +10,9 @@ class Pokemons extends Component{
 			<div>
 					<div className="image" style = {styleImage}>
 						<img height="0" width="0" src ={this.props.image} alt="Pokemons"></img>
+            <div className="image__id">
+              <p className="id">ID/1</p>
+            </div>
 					</div>
           <h2 className="name">{this.props.name}</h2>
 			</div>
