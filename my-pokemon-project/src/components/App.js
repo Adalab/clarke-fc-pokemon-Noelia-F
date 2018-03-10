@@ -12,7 +12,7 @@ class App extends Component{
 	}
 
 	componentDidMount(){
-		for (let pokemonID = 1; pokemonID <=5; pokemonID++) {
+		for (let pokemonID = 1; pokemonID <=25; pokemonID++) {
 		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}/`)
 		.then(response => response.json())
 		.then(results => {

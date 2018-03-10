@@ -7,17 +7,16 @@
 body {
   font-family: sans-serif;
 	background-color: #F5F5DC;
+  background-image: url('../images/Pikachu_Face_2048x2048.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300%;
 }
 
 .App{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	max-width: 100%;
-  background-image: url('../images/Pikachu_Face_2048x2048.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
 }
 .App-main{
 	grid-column: span 4;
@@ -71,7 +70,7 @@ body {
 .pokemon-card{
 	display: block;
   width: 250px;
-  margin-bottom: 20px;
+  margin: 10px;
   background-color: white;
 }
 
