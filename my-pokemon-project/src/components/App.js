@@ -12,12 +12,12 @@ class App extends Component{
 	}
 
 	componentDidMount(){
-		for (let pokemonID = 1; pokemonID <=10; pokemonID++) {
+		for (let pokemonID = 1; pokemonID <=5; pokemonID++) {
 		fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}/`)
 		.then(response => response.json())
 		.then(results => {
 			let listPokemons = this.state.pokemons;
-			listPokemons.push(results) //los resultados de cada iteracion se guardan en array pokemonJson
+			listPokemons.push(results)
 			this.setState({
 				pokemons: listPokemons
 			});
@@ -41,7 +41,6 @@ class App extends Component{
 			if (a.id < b.id) {
 				return -1;
 			}
-			// a must be equal to b
 			return 0;
 		});
 		const pokemonsToShow = this.state.pokemons.filter(pokemonFilter =>
