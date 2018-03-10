@@ -44,7 +44,7 @@ class App extends Component{
 			<div className="App">
 				<main className="App-main">
 					<div className="browser">
-						<input onChange={this.handleChange} type="text" name="search" placeholder="Filtra Pokemons por nombre"/>
+						<input className="browser__input" onChange={this.handleChange} type="text" name="search" placeholder="Filtra Pokemons por nombre..."/>
 					</div>
 					<div className="general-box">
 						<ul className="general-list">
