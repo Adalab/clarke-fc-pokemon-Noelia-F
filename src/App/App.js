@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Pokemons from '../components/Pokemons/Pokemons';
-import './App.css'
+import PokeInfo from '../components/PokeInfo/PokeInfo';
+import './App.css';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class App extends Component{
 
 	render(){
 		return(
 			<div className="App">
-				<Pokemons/>
+			<Switch>
+				 <Route exact path='/' component={ Pokemons } />
+				 <Route path='/pokemon/:id' component={ PokeInfo } />
+			 </Switch>
 			</div>
 		);
 	}
