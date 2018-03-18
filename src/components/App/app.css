@@ -7,7 +7,7 @@
 body {
   font-family: sans-serif;
 	background-color: #F5F5DC;
-  background-image: url('../images/Pikachu_Face_2048x2048.jpg');
+  background-image: url('../../images/Pikachu_Face_2048x2048.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 300%;
@@ -54,4 +54,21 @@ body {
 
 ::-moz-placeholder {
   text-align: center;
+}
+
+.general-list{
+	list-style: none;
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: top;
+	padding: 20px;
+}
+
+.pokemon-card{
+	display: block;
+  width: 250px;
+  margin: 10px;
+  background-color: white;
 }

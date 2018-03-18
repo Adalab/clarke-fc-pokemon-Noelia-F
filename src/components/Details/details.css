@@ -1,0 +1,22 @@
+.pokemon__details{
+  padding: 10px;
+  margin-top: 10px;
+  border-top: 1px solid black;
+}
+.details{
+  list-style: none;
+}
+.details__important{
+  font-weight: bold;
+}
+.details__button{
+  width: 25px;
+  height: 25px;
+  background-image: url('./close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  left: 80%;
+}

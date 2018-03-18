@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './pokeinfo.css';
+import Details from '../Details/Details';
+import {Link, Route, Switch} from 'react-router-dom';
 
 class PokeInfo extends Component{
 	render(){
     const styleImage = {
-			backgroundImage: `url(${this.props.image})`}
+			backgroundImage: `url(${this.props.image})`
+    }
 		return(
       <div>
         <div className="image" style = {styleImage}>
@@ -25,8 +28,15 @@ class PokeInfo extends Component{
   		      </div>
   					<div className="info__evolution">
   						<p className="text">Evoluciona de</p>
-  						<p className="name name--evolution">Bulbasour</p>
+  						<p className="name name--evolution">???</p>
   					</div>
+						<Link className="info-btn" to={`/pokemonDetails/${this.props.name}`}
+							onClick={() => {this.props.onMoreInfo(this.props.name)}}>More Info</Link>
+						{(this.props.selectedPokemon.name === this.props.name) ?
+							<Switch>
+								<Route path="/pokemonDetails/:pokemoname"
+									component={(props) => {return <Details selectedPokemon={this.props.selectedPokemon} {...props} />}} />
+							</Switch> : ""}
   		  </div>
       </div>
 		);

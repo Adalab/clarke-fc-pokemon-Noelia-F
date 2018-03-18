@@ -96,3 +96,15 @@
 .name--evolution{
   font-weight: normal;
 }
+
+.info-btn{
+	width: 75%;
+	background-color: darkgrey;
+	border-radius: 10px;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+}

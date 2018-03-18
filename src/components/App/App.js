@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PokeInfo from '../PokeInfo/PokeInfo';
-import './pokemons.css';
+import './app.css';
 
-class Pokemons extends Component{
+class App extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
 			arrayPokemons: [],
+			selectedPokemon: {},
 			filterPokemons:'',
 		};
+		this.requestServer = this.requestServer.bind(this);
 	}
 
 	 componentDidMount() {
@@ -30,9 +32,20 @@ class Pokemons extends Component{
 			filterPokemons: event.target.value.toLowerCase()
 		})
 	}
+	requestServer(pokemonId) {
+			fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+			.then(response => response.json())
+			.then(json => {
+				this.setState({
+					selectedPokemon: json
+				});
+			});
+		}
 	render(){
-		const pokemons = this.state.arrayPokemons
-		console.log(pokemons)
+		let pokemons = this.state.arrayPokemons
+		if (this.state.filterPokemons) {
+			pokemons = pokemons.filter( pokemon => pokemon.name.includes(this.state.filterPokemons.toLowerCase()))
+		}
 		return(
 			<main className="App-main">
 				<div className="browser">
@@ -49,6 +62,8 @@ class Pokemons extends Component{
 								name={pokemon.name}
 								types= {pokemon.types.map((t) => t.type.name)}
 								abilities= {pokemon.abilities.map((ability) => ability.ability.name)}
+								selectedPokemon={this.state.selectedPokemon}
+								onMoreInfo={this.requestServer}
 							/>
 							</li>
 						)}
@@ -59,4 +74,4 @@ class Pokemons extends Component{
 	}
 }
 
-export default Pokemons;
+export default App;
